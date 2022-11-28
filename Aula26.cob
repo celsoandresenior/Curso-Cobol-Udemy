@@ -5,24 +5,21 @@
        working-storage                                         section .
      
        procedure                                              division .
-
-       perform main-procedure thru main-procedure-fim.
-       perform 0001-inicio    thru 0001-inicio-fim.
-      * perform 0002-inicio    thru 0002-inicio-fim.
-
+       
+      * perform main-procedure.
+      
        main-procedure.
            display "******************INICIO DO PROCESSAMENTO**********"
-           display "pos processessamento....".
-       main-procedure-fim. 
+           display "processamento....".
+           perform 0001-inicio.
+           perform 0002-final.
+ 
 
        0001-inicio.
            display "processamento....".
-           perform 0002-inicio thru 0002-inicio-fim.
-       0001-inicio-fim.
-
-       0002-inicio.
-           display "fim....".
-           stop run .
-       0002-inicio-fim.
+    
+       0002-final.   
+           display "******************FINAL DO PROCESSAMENTO***********"
+           stop run.
 
        end program Aula26.
